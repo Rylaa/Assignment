@@ -5,11 +5,11 @@
 //  Created by Yusuf Demirkoparan on 26.01.2024.
 //
 
-import XCTest
 @testable import Teknasyon_Assignment
+import XCTest
 
+// swiftlint:disable all
 final class Teknasyon_AssignmentTests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -28,9 +28,8 @@ final class Teknasyon_AssignmentTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

@@ -6,7 +6,7 @@
 //
 
 import XCTest
-
+// swiftlint:disable all
 final class Teknasyon_AssignmentUITests: XCTestCase {
 
     override func setUpWithError() throws {
