@@ -2,6 +2,8 @@ disabled_rules:
 - todo
 - cyclomatic_complexity
 - mark
+- superfluous_disable_command
+- blanket_disable_command
 
 excluded:
 - Pods
@@ -307,7 +309,7 @@ opt_in_rules:
 
     # Rationale: Provides cleaniness of code
     # https://github.com/realm/SwiftLint/blob/master/Rules.md#superfluous-disable-command
-    - superfluous_disable_command
+#    - superfluous_disable_command
 
     # Rationale: Provides consistency in coding style
     # https://github.com/realm/SwiftLint/blob/master/Rules.md#switch-and-case-statement-alignment
@@ -490,7 +492,7 @@ opt_in_rules:
     - multiline_arguments
 
     # Multiline arguments should have their surrounding brackets in a new line.
-    - multiline_arguments_brackets
+#    - multiline_arguments_brackets
 
     # Chained function calls should be either on the same line, or one per line.
     - multiline_function_chains
@@ -499,7 +501,7 @@ opt_in_rules:
     - multiline_literal_brackets
 
     # Multiline parameters should have their surrounding brackets in a new line.
-    - multiline_parameters_brackets
+    #- multiline_parameters_brackets
 
     # Trailing closure syntax should be used whenever possible.
     - trailing_closure
@@ -527,9 +529,9 @@ type_contents_order:
     - case
     - associated_type
     - type_alias
-    - subtype
+   # - subtype
     - [type_property, instance_property, ib_outlet, ib_inspectable]
-    - [initializer, deinitializer, type_method, view_life_cycle_method, subscript, other_method, ib_action]
+    - [initializer, deinitializer, type_method, view_life_cycle_method, subscript, ib_action]
 
 custom_rules:
     force_https:
