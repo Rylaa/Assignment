@@ -10,7 +10,6 @@
 		53492A952B63E06700BA4A9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492A942B63E06700BA4A9A /* AppDelegate.swift */; };
 		53492A972B63E06700BA4A9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492A962B63E06700BA4A9A /* SceneDelegate.swift */; };
 		53492A992B63E06700BA4A9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492A982B63E06700BA4A9A /* ViewController.swift */; };
-		53492A9C2B63E06700BA4A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53492A9A2B63E06700BA4A9A /* Main.storyboard */; };
 		53492A9E2B63E06800BA4A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53492A9D2B63E06800BA4A9A /* Assets.xcassets */; };
 		53492AA12B63E06800BA4A9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53492A9F2B63E06800BA4A9A /* LaunchScreen.storyboard */; };
 		53492AAC2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AAB2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift */; };
@@ -40,7 +39,6 @@
 		53492A942B63E06700BA4A9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53492A962B63E06700BA4A9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		53492A982B63E06700BA4A9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		53492A9B2B63E06700BA4A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53492A9D2B63E06800BA4A9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53492AA02B63E06800BA4A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53492AA22B63E06800BA4A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,12 +97,10 @@
 		53492A932B63E06700BA4A9A /* Teknasyon-Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				53492A942B63E06700BA4A9A /* AppDelegate.swift */,
-				53492A962B63E06700BA4A9A /* SceneDelegate.swift */,
+				53492AC92B63E36600BA4A9A /* Modules */,
+				53492AC82B63E35800BA4A9A /* Resources */,
+				53492AC72B63E35200BA4A9A /* App */,
 				53492A982B63E06700BA4A9A /* ViewController.swift */,
-				53492A9A2B63E06700BA4A9A /* Main.storyboard */,
-				53492A9D2B63E06800BA4A9A /* Assets.xcassets */,
-				53492A9F2B63E06800BA4A9A /* LaunchScreen.storyboard */,
 				53492AA22B63E06800BA4A9A /* Info.plist */,
 			);
 			path = "Teknasyon-Assignment";
@@ -125,6 +121,31 @@
 				53492AB72B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift */,
 			);
 			path = "Teknasyon-AssignmentUITests";
+			sourceTree = "<group>";
+		};
+		53492AC72B63E35200BA4A9A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				53492A962B63E06700BA4A9A /* SceneDelegate.swift */,
+				53492A942B63E06700BA4A9A /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		53492AC82B63E35800BA4A9A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53492A9F2B63E06800BA4A9A /* LaunchScreen.storyboard */,
+				53492A9D2B63E06800BA4A9A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		53492AC92B63E36600BA4A9A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +259,6 @@
 			files = (
 				53492AA12B63E06800BA4A9A /* LaunchScreen.storyboard in Resources */,
 				53492A9E2B63E06800BA4A9A /* Assets.xcassets in Resources */,
-				53492A9C2B63E06700BA4A9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +322,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		53492A9A2B63E06700BA4A9A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53492A9B2B63E06700BA4A9A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		53492A9F2B63E06800BA4A9A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -452,7 +464,7 @@
 				INFOPLIST_FILE = "Teknasyon-Assignment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -481,7 +493,7 @@
 				INFOPLIST_FILE = "Teknasyon-Assignment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
