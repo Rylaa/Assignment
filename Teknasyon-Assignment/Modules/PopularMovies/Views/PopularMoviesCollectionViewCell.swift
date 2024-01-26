@@ -1,5 +1,5 @@
 //
-//  FavoreMoviesCollectionViewCell.swift
+//  PopularMoviesCollectionViewCell.swift
 //  Teknasyon-Assignment
 //
 //  Created by Yusuf Demirkoparan on 26.01.2024.
@@ -10,7 +10,7 @@ import SnapKit
 import UIKit
 
 final class PopularMoviesCollectionViewCell: UICollectionViewCell, Providable {
-    typealias ProvidedItem = FavoriteMoviesDetailModel
+    typealias ProvidedItem = PopularMoviesDetailModel
 
     private let bannerView = MovieBannerView()
     private var cellModel: ProvidedItem?
@@ -25,7 +25,7 @@ final class PopularMoviesCollectionViewCell: UICollectionViewCell, Providable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func provide(_ item: FavoriteMoviesDetailModel) {
+    func provide(_ item: PopularMoviesDetailModel) {
         cellModel = item
         bannerView.provideModel(item)
     }
