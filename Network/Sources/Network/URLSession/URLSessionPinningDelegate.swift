@@ -8,7 +8,9 @@
 import Foundation
 
 public final class URLSessionPinningDelegate: NSObject, URLSessionDataDelegate {
-    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    public func urlSession(_ session: URLSession,
+                           didReceive challenge: URLAuthenticationChallenge,
+                           completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
             if let serverTrust = challenge.protectionSpace.serverTrust {
                 let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0)
@@ -42,7 +44,7 @@ private extension URLSessionPinningDelegate {
         }
 
         if let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0),
-           getHash(from: serverCertificate, serverTrust: serverTrust) == "aDGEiq009E1jK1uvuNP8LraH098EweUUu+Nc4LnDpVE=" {
+           getHash(from: serverCertificate, serverTrust: serverTrust) == "5VLcahb6x4EvvFrCF2TePZulWqrLHS2jCg9Ywv6JHog=" {
             return true
         }
 

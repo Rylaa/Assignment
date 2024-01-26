@@ -21,10 +21,10 @@ class SimuleURLSession: URLProtocol {
     }
 
     override func startLoading() {
-        if let stubError = SimuleURLSession.stubError {
+        if let stubError = Self.stubError {
             client?.urlProtocol(self, didFailWithError: stubError)
         } else {
-            client?.urlProtocol(self, didLoad: SimuleURLSession.stubResponseData ?? Data())
+            client?.urlProtocol(self, didLoad: Self.stubResponseData ?? Data())
         }
         client?.urlProtocolDidFinishLoading(self)
     }
