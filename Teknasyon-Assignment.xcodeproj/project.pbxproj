@@ -47,6 +47,7 @@
 		53492AB12B63E06800BA4A9A /* Teknasyon-AssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Teknasyon-AssignmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53492AB52B63E06800BA4A9A /* Teknasyon_AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teknasyon_AssignmentUITests.swift; sourceTree = "<group>"; };
 		53492AB72B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teknasyon_AssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		53492ACA2B63E4A500BA4A9A /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		53492A882B63E06700BA4A9A = {
 			isa = PBXGroup;
 			children = (
+				53492ACA2B63E4A500BA4A9A /* Network */,
 				53492A932B63E06700BA4A9A /* Teknasyon-Assignment */,
 				53492AAA2B63E06800BA4A9A /* Teknasyon-AssignmentTests */,
 				53492AB42B63E06800BA4A9A /* Teknasyon-AssignmentUITests */,
