@@ -1,5 +1,5 @@
 //
-//  FavoriteMoviesCollectionViewDataSources.swift
+//  PopularMoviesCollectionViewDatasource.swift
 //  Teknasyon-Assignment
 //
 //  Created by Yusuf Demirkoparan on 26.01.2024.
@@ -12,7 +12,7 @@ protocol PopularMoviesViewDatasourceProtocol: AnyObject {
     func didSelectItem(_ selectedItem: URL)
 }
 
-final class PopularMoviesCollectionViewDatasource: CollectionViewModel<PopularMoviesCollectionViewCell, FavoriteMoviesCollectionHeaderView> {
+final class PopularMoviesCollectionViewDatasource: CollectionViewModel<PopularMoviesCollectionViewCell, PopularMoviesCollectionHeaderView> {
     weak var delegate: PopularMoviesViewDatasourceProtocol?
 
     override init(collectionView: UICollectionView, cellReuseIdentifier: String, headerIdentifier: String? = "") {

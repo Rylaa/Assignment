@@ -1,5 +1,5 @@
 //
-//  FavoriteMoviesInteractor.swift
+//  PopularMoviesInteractor.swift
 //  Teknasyon-Assignment
 //
 //  Created by Yusuf Demirkoparan on 26.01.2024.
@@ -12,12 +12,12 @@ import Combine
 protocol PopularMoviesInteractorProtocol {
     var presenter: PopularMoviesPresenterProtocol? { get }
   
-    func fetchFavoriteMovies()
+    func fetchPopularMovies()
 }
 
 final class PopularMoviesInteractor {
     weak var presenter: PopularMoviesPresenterProtocol?
-    var worker: FavoriteMoviesWorkerProtocol?
+    var worker: PopularMoviesWorkerProtocol?
     
     private var cancellables = CancelBag()
 }
@@ -25,8 +25,8 @@ final class PopularMoviesInteractor {
 extension PopularMoviesInteractor: PopularMoviesInteractorProtocol {
     
     @MainActor
-    func fetchFavoriteMovies() {
-        worker?.fetchFavoriteMovies().sink(receiveCompletion: { [weak self] requestState in
+    func fetchPopularMovies() {
+        worker?.fetchPopularMovies().sink(receiveCompletion: { [weak self] requestState in
             guard let self else { return }
             
             switch requestState {
