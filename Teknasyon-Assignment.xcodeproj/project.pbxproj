@@ -15,6 +15,9 @@
 		53492AAC2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AAB2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift */; };
 		53492AB62B63E06800BA4A9A /* Teknasyon_AssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AB52B63E06800BA4A9A /* Teknasyon_AssignmentUITests.swift */; };
 		53492AB82B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AB72B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift */; };
+		53492ACE2B63E82B00BA4A9A /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 53492ACD2B63E82B00BA4A9A /* Core */; };
+		53492AD02B63E82E00BA4A9A /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 53492ACF2B63E82E00BA4A9A /* Network */; };
+		53492AD22B63E83500BA4A9A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53492AD12B63E83500BA4A9A /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,7 @@
 		53492AB52B63E06800BA4A9A /* Teknasyon_AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teknasyon_AssignmentUITests.swift; sourceTree = "<group>"; };
 		53492AB72B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teknasyon_AssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		53492ACA2B63E4A500BA4A9A /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
+		53492ACB2B63E5D600BA4A9A /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53492AD22B63E83500BA4A9A /* SnapKit in Frameworks */,
+				53492ACE2B63E82B00BA4A9A /* Core in Frameworks */,
+				53492AD02B63E82E00BA4A9A /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,11 +85,13 @@
 		53492A882B63E06700BA4A9A = {
 			isa = PBXGroup;
 			children = (
+				53492ACB2B63E5D600BA4A9A /* Core */,
 				53492ACA2B63E4A500BA4A9A /* Network */,
 				53492A932B63E06700BA4A9A /* Teknasyon-Assignment */,
 				53492AAA2B63E06800BA4A9A /* Teknasyon-AssignmentTests */,
 				53492AB42B63E06800BA4A9A /* Teknasyon-AssignmentUITests */,
 				53492A922B63E06700BA4A9A /* Products */,
+				53492ACC2B63E82B00BA4A9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +159,13 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		53492ACC2B63E82B00BA4A9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +182,11 @@
 			dependencies = (
 			);
 			name = "Teknasyon-Assignment";
+			packageProductDependencies = (
+				53492ACD2B63E82B00BA4A9A /* Core */,
+				53492ACF2B63E82E00BA4A9A /* Network */,
+				53492AD12B63E83500BA4A9A /* SnapKit */,
+			);
 			productName = "Teknasyon-Assignment";
 			productReference = 53492A912B63E06700BA4A9A /* Teknasyon-Assignment.app */;
 			productType = "com.apple.product-type.application";
@@ -240,7 +261,6 @@
 			mainGroup = 53492A882B63E06700BA4A9A;
 			packageReferences = (
 				53492AC42B63E19300BA4A9A /* XCRemoteSwiftPackageReference "SnapKit" */,
-				53492AC52B63E1B800BA4A9A /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				53492AC62B63E1C700BA4A9A /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */,
 			);
 			productRefGroup = 53492A922B63E06700BA4A9A /* Products */;
@@ -638,14 +658,6 @@
 				minimumVersion = 5.7.0;
 			};
 		};
-		53492AC52B63E1B800BA4A9A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.18.10;
-			};
-		};
 		53492AC62B63E1C700BA4A9A /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin";
@@ -655,6 +667,22 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53492ACD2B63E82B00BA4A9A /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		53492ACF2B63E82E00BA4A9A /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+		53492AD12B63E83500BA4A9A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53492AC42B63E19300BA4A9A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53492A892B63E06700BA4A9A /* Project object */;
 }
