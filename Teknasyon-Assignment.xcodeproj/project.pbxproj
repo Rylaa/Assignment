@@ -215,6 +215,11 @@
 				Base,
 			);
 			mainGroup = 53492A882B63E06700BA4A9A;
+			packageReferences = (
+				53492AC42B63E19300BA4A9A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				53492AC52B63E1B800BA4A9A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				53492AC62B63E1C700BA4A9A /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */,
+			);
 			productRefGroup = 53492A922B63E06700BA4A9A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -609,6 +614,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53492AC42B63E19300BA4A9A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+		53492AC52B63E1B800BA4A9A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.10;
+			};
+		};
+		53492AC62B63E1C700BA4A9A /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 53492A892B63E06700BA4A9A /* Project object */;
 }
