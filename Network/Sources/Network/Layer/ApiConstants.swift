@@ -7,14 +7,15 @@
 
 import Foundation
 
-public struct ApiConstants {
-    private static let apiKey = "9a144f2692833ce4250b0a65e532e809"
+public struct ApiConstants { 
     public static let apiScheme: String = "https"
     public static let apiHost: String = "api.themoviedb.org"
-    public static let baseUrl: String = "3/account"
+    public static let baseUrl: String = "3/person/"
+    
     public static let imageBaseUrl = "https://image.tmdb.org/t/p/original/"
+   
     public enum Path: String {
-        case favorite = "favorite/movies"
-        case detail = ""
+        case popular
     }
 }
+//--url 'https://api.themoviedb.org/3/person/popular?language=en-US&page=1' \
