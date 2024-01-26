@@ -17,12 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         container = DependencyContainer()
 
         let navigationController = UINavigationController()
-        let buildFavoriteMovies = FavoriteMoviesRouter.buildFavoriteMovies(using: navigationController, context: container)
+        let builPopularMovies = PopularMoviesRouter.buildPopularMovies(using: navigationController, context: container)
 
         let window = UIWindow(windowScene: windowScene)
         window.tintColor = .white
         window.overrideUserInterfaceStyle = .dark
-        window.rootViewController = buildFavoriteMovies
+        window.rootViewController = builPopularMovies
         window.makeKeyAndVisible()
 
         self.window = window
