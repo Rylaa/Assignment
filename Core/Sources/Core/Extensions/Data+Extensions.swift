@@ -8,7 +8,6 @@
 import CommonCrypto
 import Foundation
 
-// swiftlint:disable syntactic_sugar
 public extension Data {
     var sha256: Data {
         var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))

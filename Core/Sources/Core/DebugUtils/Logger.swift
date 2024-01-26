@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 public let Log = Logger(service: "Teknasyon-Assignment")
 
 public final class Logger {
