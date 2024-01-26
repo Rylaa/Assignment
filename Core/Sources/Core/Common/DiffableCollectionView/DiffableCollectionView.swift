@@ -7,7 +7,6 @@
 // swiftlint:disable all
 import UIKit
 
-@available(iOS 13.0, *)
 open class CollectionViewModel<CellType: UICollectionViewCell & Providable, HeaderType: UICollectionReusableView & Providable>: NSObject {
     // Typealiases for our convenience
     public typealias Item = CellType.ProvidedItem
@@ -80,7 +79,6 @@ open class CollectionViewModel<CellType: UICollectionViewCell & Providable, Head
     }
 }
 
-@available(iOS 13.0, *)
 extension CollectionViewModel {
     private func cellProvider(_ collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CellType {

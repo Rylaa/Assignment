@@ -22,7 +22,9 @@ public final class Spinner {
                 addBackgrounView()
                 setupActivityIndicator(baseColor: baseColor)
                 window.addSubview(backgroundView)
-                window.addSubview(activityIndicator!)
+                if let activityIndicator {
+                    window.addSubview(activityIndicator)
+                }
 
                 activityIndicator?.startAnimating()
             }
