@@ -1,5 +1,5 @@
 //
-//  FavoriteMoviesRouter.swift
+//  PopularMoviesRouter.swift
 //  Teknasyon-Assignment
 //
 //  Created by Yusuf Demirkoparan on 26.01.2024.
@@ -23,12 +23,12 @@ final class PopularMoviesRouter: PopularMoviesRouterProtocol {
 }
 
 extension PopularMoviesRouter {
-    static func buildFavoriteMovies(using navigationController: UINavigationController?, context: Context) -> PopularMoviesViewController {
+    static func buildPopularMovies(using navigationController: UINavigationController?, context: Context) -> PopularMoviesViewController {
         let router = PopularMoviesRouter()
         let interactor = PopularMoviesInteractor()
-        let presenter = FavoriteMoviesPresenter(interactor: interactor, router: router)
+        let presenter = PopularMoviesPresenter(interactor: interactor, router: router)
         let view = PopularMoviesViewController()
-        let worker = FavoriteMoviesWorker(context.network)
+        let worker = PopularMoviesWorker(context.network)
         view.presenter = presenter
         presenter.view = view
         interactor.presenter = presenter

@@ -1,5 +1,5 @@
 //
-//  FavoriteMoviesViewController.swift
+//  PopularMoviesViewController.swift
 //  Teknasyon-Assignment
 //
 //  Created by Yusuf Demirkoparan on 26.01.2024.
@@ -9,12 +9,12 @@ import SnapKit
 import UIKit
 import Core
 
-protocol FavoriteMoviesViewProtocol: AnyObject {
+protocol PopularMoviesViewProtocol: AnyObject {
     func initialize()
 }
 
 final class PopularMoviesViewController: UIViewController {
-    var presenter: FavoriteMoviesPresenterProtocol! /// We force unwrap because we know it will always be non-nil (or always be strong).
+    var presenter: PopularMoviesPresenterProtocol! /// We force unwrap because we know it will always be non-nil (or always be strong).
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .createFlowLayout())
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ final class PopularMoviesViewController: UIViewController {
 }
 
 // MARK: Presenter contracts
-extension PopularMoviesViewController: FavoriteMoviesViewProtocol {
+extension PopularMoviesViewController: PopularMoviesViewProtocol {
     func initialize() {
         presenter.initialize()
     }
@@ -44,13 +44,13 @@ private extension PopularMoviesViewController {
             make.leading.trailing.equalToSuperview()
         }
         
-        let collectionViewDataSource = FavoriteMoviesCollectionViewDatasource(collectionView: collectionView,
-                                                                              cellReuseIdentifier: FavoriteMoviesCollectionViewCell.identifier)
+        let collectionViewDataSource = PopularMoviesCollectionViewDatasource(collectionView: collectionView,
+                                                                              cellReuseIdentifier: PopularMoviesCollectionViewCell.identifier)
         collectionView.dataSource = collectionViewDataSource.makeDataSource()
         collectionView.delegate = collectionViewDataSource
         collectionView.backgroundColor = .black
         collectionView.isPagingEnabled = false
-        collectionView.register(FavoriteMoviesCollectionViewCell.self, forCellWithReuseIdentifier: FavoriteMoviesCollectionViewCell.identifier)
+        collectionView.register(PopularMoviesCollectionViewCell.self, forCellWithReuseIdentifier: PopularMoviesCollectionViewCell.identifier)
         presenter.collectionViewDataSource(collectionViewDataSource)
     }
 }

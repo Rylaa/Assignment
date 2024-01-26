@@ -1,5 +1,5 @@
 //
-//  FavoriteMoviesPresenter.swift
+//  PopularMoviesPresenter.swift
 //  Teknasyon-Assignment
 //
 //  Created by Yusuf Demirkoparan on 26.01.2024.
@@ -38,13 +38,13 @@ extension PopularMoviesPresenter: PopularMoviesPresenterProtocol {
         collectionViewDataSource?.delegate = self
     }
     
-    func addItems(_ items: [FavoriteMoviesDetailModel]) {
+    func addItems(_ items: [PopularMoviesDetailModel]) {
         collectionViewDataSource?.update([Section(items: items)])
     }
 }
 
 /// Contracts with collection view datasource
-extension PopularMoviesPresenter: FavoriteMoviesViewDatasourceProtocol {
+extension PopularMoviesPresenter: PopularMoviesViewDatasourceProtocol {
     func didSelectItem(_ selectedItem: URL) {
     }
 }
