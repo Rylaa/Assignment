@@ -77,6 +77,8 @@ class MockPopularMoviesInteractor: PopularMoviesInteractorProtocol {
 }
 
 class MockPopularMoviesRouter: PopularMoviesRouterProtocol {
+    func showDetail(_ movieDetail: Teknasyon_Assignment.MovieModel) {}
+    
     var isSomeNavigationCalled = false
 
     func navigateToSomeScreen() {
