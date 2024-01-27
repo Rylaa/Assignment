@@ -16,7 +16,7 @@ protocol MovieBannerConformableProtocol {
     var movieName: String { get }
 }
 
-extension PopularMoviesDetailModel: MovieBannerConformableProtocol {
+extension MovieModel: MovieBannerConformableProtocol {
     var averageOfVote: Double {
         voteAverage.toDoubleValueOrZero
     }

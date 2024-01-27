@@ -25,6 +25,7 @@ final class MovieBannerView: UIView {
         setupViews()
     }
 
+    @available(*, unavailable, message: "init(coder:) has not been implemented")
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -57,7 +58,7 @@ private extension MovieBannerView {
     }
 
     func addBannerImageView() {
-        bannerImageView.contentMode = .scaleAspectFill
+        bannerImageView.contentMode = .scaleAspectFit
         contentStackView.addArrangedSubview(bannerImageView)
     }
 
