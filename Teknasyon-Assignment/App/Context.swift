@@ -10,11 +10,11 @@ import Network
 import Core
 
 protocol Context {
-    var network: NetworkClientService { get }
+    var network: NetworkClientService { get set }
 }
 
 class DependencyContainer: Context {
-    let network: NetworkClientService
+    var network: NetworkClientService
     
     init() {
         let networkClient = NetworkClient()
