@@ -14,6 +14,7 @@ protocol MovieBannerConformableProtocol {
     var vote: Int { get }
     var averageOfVote: Double { get }
     var movieName: String { get }
+    var movieDetail: String { get }
 }
 
 extension MovieModel: MovieBannerConformableProtocol {
@@ -31,5 +32,9 @@ extension MovieModel: MovieBannerConformableProtocol {
 
     var bannerUrl: String {
         ApiConstants.imageBaseUrl + posterPath.toStringValueOrEmpty
+    }
+    
+    var movieDetail: String {
+        overview.toStringValueOrEmpty
     }
 }

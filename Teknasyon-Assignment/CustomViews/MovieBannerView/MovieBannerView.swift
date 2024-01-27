@@ -9,6 +9,11 @@ import SnapKit
 import UIKit
 
 final class MovieBannerView: UIView {
+    enum BannerType {
+        case detail
+        case popular
+    }
+    
     private let contentStackView = UIStackView()
     private let bannerImageView = UIImageView()
     private let bottomStackView = UIStackView()
@@ -31,11 +36,11 @@ final class MovieBannerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func provideModel(_ model: MovieBannerConformableProtocol) {
+    func provideModel(_ model: MovieBannerConformableProtocol, type: BannerType) {
         self.model = model
 
         bannerImageView.load(imageUrl: model.bannerUrl)
-        moviewNameLabel.text = model.movieName
+        moviewNameLabel.text = type == .popular ? model.movieName : model.movieDetail
         voteDetailLabel.text = "IMDB \(model.averageOfVote)"
     }
 }
