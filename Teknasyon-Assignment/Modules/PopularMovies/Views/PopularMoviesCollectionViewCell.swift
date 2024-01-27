@@ -27,7 +27,7 @@ final class PopularMoviesCollectionViewCell: UICollectionViewCell, Providable {
 
     func provide(_ item: MovieModel) {
         cellModel = item
-        bannerView.provideModel(item)
+        bannerView.provideModel(item, type: .popular)
     }
 }
 

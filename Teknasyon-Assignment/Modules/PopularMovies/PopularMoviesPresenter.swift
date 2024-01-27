@@ -39,7 +39,7 @@ extension PopularMoviesPresenter: PopularMoviesPresenterProtocol {
         collectionViewDataSource = dataSource
         collectionViewDataSource?.delegate = self
     }
-    
+
     func addCollectionViewSections(_ sections: [Section<PopularMoviesCollectionHeaderModel?, [MovieModel]>]) {
         collectionViewDataSource?.add(sections)
     }
@@ -48,9 +48,9 @@ extension PopularMoviesPresenter: PopularMoviesPresenterProtocol {
 /// Contracts with collection view datasource
 extension PopularMoviesPresenter: PopularMoviesViewDatasourceProtocol {
     func didSelectItem(_ item: MovieModel) {
-        
+        router.showDetail(item)
     }
-    
+
     func loadMore() {
         interactor.fetchPopularMovies()
     }

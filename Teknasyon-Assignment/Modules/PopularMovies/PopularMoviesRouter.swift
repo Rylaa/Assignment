@@ -8,18 +8,18 @@
 import UIKit
 
 protocol PopularMoviesRouterProtocol: AnyObject {
-//    func showDetail(_ item:)
+    func showDetail(_ movieDetail: MovieModel)
 }
 
 final class PopularMoviesRouter: PopularMoviesRouterProtocol {
-    
     var navigationController: UINavigationController?
     weak var viewController: UIViewController?
     private var context: Context?
-//    func showDetail(_ item:) {
-//        guard let context else { return }
-//    
-//    }
+
+    func showDetail(_ movieDetail: MovieModel) {
+        let buildDetail = MoviesDetailRouter.buildMoviesDetail(using: navigationController, movieDetail: movieDetail)
+        navigationController?.pushViewController(buildDetail, animated: true)
+    }
 }
 
 extension PopularMoviesRouter {
@@ -35,7 +35,7 @@ extension PopularMoviesRouter {
         interactor.worker = worker
         router.navigationController = navigationController
         router.viewController = view
-        
+
         return view
     }
 }
