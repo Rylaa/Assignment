@@ -517,7 +517,7 @@ opt_in_rules:
 
     - type_contents_order
 
-    - sorted_imports
+#    - sorted_imports
 
     - private_outlet
 
