@@ -9,7 +9,8 @@ import Core
 import UIKit
 
 protocol PopularMoviesViewDatasourceProtocol: AnyObject {
-    func didSelectItem(_ selectedItem: URL)
+    func didSelectItem(_ item: MovieModel)
+    func loadMore()
 }
 
 final class PopularMoviesCollectionViewDatasource: CollectionViewModel<PopularMoviesCollectionViewCell, PopularMoviesCollectionHeaderView> {
@@ -38,8 +39,20 @@ extension PopularMoviesCollectionViewDatasource: UICollectionViewDelegateFlowLay
 
 extension PopularMoviesCollectionViewDatasource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let selectedItem = sections.value[safe: indexPath.section]?.items[safe: indexPath.row] {
-//            delegate?.didSelectItem(selectedItem)
-//        }
+        if let selectedItem = sections.value[safe: indexPath.section]?.items[safe: indexPath.row] {
+            delegate?.didSelectItem(selectedItem)
+        }
+    }
+}
+
+extension PopularMoviesCollectionViewDatasource: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+
+        if offsetY > (contentHeight - height * 2) {
+            delegate?.loadMore()
+        }
     }
 }

@@ -41,13 +41,17 @@ extension PopularMoviesPresenter: PopularMoviesPresenterProtocol {
     }
     
     func addCollectionViewSections(_ sections: [Section<PopularMoviesCollectionHeaderModel?, [MovieModel]>]) {
-        var sectionItems: [Section<PopularMoviesCollectionHeaderModel?, [MovieModel]>] = sections
-        collectionViewDataSource?.add(sectionItems)
+        collectionViewDataSource?.add(sections)
     }
 }
 
 /// Contracts with collection view datasource
 extension PopularMoviesPresenter: PopularMoviesViewDatasourceProtocol {
-    func didSelectItem(_ selectedItem: URL) {
+    func didSelectItem(_ item: MovieModel) {
+        
+    }
+    
+    func loadMore() {
+        interactor.fetchPopularMovies()
     }
 }
