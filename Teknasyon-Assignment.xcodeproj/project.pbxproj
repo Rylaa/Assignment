@@ -12,7 +12,6 @@
 		53492A992B63E06700BA4A9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492A982B63E06700BA4A9A /* ViewController.swift */; };
 		53492A9E2B63E06800BA4A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53492A9D2B63E06800BA4A9A /* Assets.xcassets */; };
 		53492AA12B63E06800BA4A9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53492A9F2B63E06800BA4A9A /* LaunchScreen.storyboard */; };
-		53492AAC2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AAB2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift */; };
 		53492AB62B63E06800BA4A9A /* Teknasyon_AssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AB52B63E06800BA4A9A /* Teknasyon_AssignmentUITests.swift */; };
 		53492AB82B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AB72B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift */; };
 		53492ACE2B63E82B00BA4A9A /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 53492ACD2B63E82B00BA4A9A /* Core */; };
@@ -30,6 +29,7 @@
 		53492AFB2B642F8400BA4A9A /* MovieBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AFA2B642F8400BA4A9A /* MovieBannerView.swift */; };
 		53492AFD2B642FBE00BA4A9A /* MovieBannerConformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AFC2B642FBE00BA4A9A /* MovieBannerConformable.swift */; };
 		53492AFF2B64413C00BA4A9A /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492AFE2B64413C00BA4A9A /* Context.swift */; };
+		53492B082B65560F00BA4A9A /* PopularMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53492B072B65560F00BA4A9A /* PopularMoviesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		53492AA02B63E06800BA4A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53492AA22B63E06800BA4A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53492AA72B63E06800BA4A9A /* Teknasyon-AssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Teknasyon-AssignmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		53492AAB2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teknasyon_AssignmentTests.swift; sourceTree = "<group>"; };
 		53492AB12B63E06800BA4A9A /* Teknasyon-AssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Teknasyon-AssignmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53492AB52B63E06800BA4A9A /* Teknasyon_AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teknasyon_AssignmentUITests.swift; sourceTree = "<group>"; };
 		53492AB72B63E06800BA4A9A /* Teknasyon_AssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teknasyon_AssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		53492AFA2B642F8400BA4A9A /* MovieBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBannerView.swift; sourceTree = "<group>"; };
 		53492AFC2B642FBE00BA4A9A /* MovieBannerConformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBannerConformable.swift; sourceTree = "<group>"; };
 		53492AFE2B64413C00BA4A9A /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		53492B072B65560F00BA4A9A /* PopularMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,7 @@
 		53492AAA2B63E06800BA4A9A /* Teknasyon-AssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				53492AAB2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift */,
+				53492B0A2B6558BE00BA4A9A /* PopularMoviesTests */,
 			);
 			path = "Teknasyon-AssignmentTests";
 			sourceTree = "<group>";
@@ -256,6 +256,14 @@
 				53492AFC2B642FBE00BA4A9A /* MovieBannerConformable.swift */,
 			);
 			path = MovieBannerView;
+			sourceTree = "<group>";
+		};
+		53492B0A2B6558BE00BA4A9A /* PopularMoviesTests */ = {
+			isa = PBXGroup;
+			children = (
+				53492B072B65560F00BA4A9A /* PopularMoviesTests.swift */,
+			);
+			path = PopularMoviesTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,7 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53492AAC2B63E06800BA4A9A /* Teknasyon_AssignmentTests.swift in Sources */,
+				53492B082B65560F00BA4A9A /* PopularMoviesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
