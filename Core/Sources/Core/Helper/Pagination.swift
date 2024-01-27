@@ -8,17 +8,12 @@
 import Foundation
 
 public class PaginationManager {
-    var currentPage: Int = 1
-    var increase: Int = 1
-    var totalPage: Int = .zero
+    public var currentPage: Int = 1
+    public var increase: Int = 1
+    public var totalPage: Int = .zero
 
     public init() {}
-
-    public func configure(currentPage: Int = .zero, totalPage: Int = .zero) {
-        self.currentPage = currentPage
-        self.totalPage = totalPage
-    }
-
+    
     public func nextPage() {
         currentPage += increase
     }

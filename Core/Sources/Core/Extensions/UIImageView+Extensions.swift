@@ -15,16 +15,4 @@ public extension UIImageView {
         sd_imageIndicator = SDWebImageActivityIndicator.gray
         sd_setImage(with: url)
     }
-
-    func loadImageFromURL(_ url: URL) {
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    if let image = UIImage(data: data) {
-                        self.image = image
-                    }
-                }
-            }
-        }
-    }
 }
