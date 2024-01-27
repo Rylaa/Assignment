@@ -10,14 +10,21 @@ import Core
 import Foundation
 
 public protocol NetworkClientService {
+    var urlSession: URLSession? { get set }
+    var subscribeQueue: DispatchQueue { get set }
+
     func request<T: Decodable>(_ request: Request, response: T.Type) -> AnyPublisher<T, RequestError>
 }
 
 public final class NetworkClient: NetworkClientService {
-    private var subscribeQueue = DispatchQueue(label: "com.Teknasyon.queue", qos: .background)
-    private var urlSession: URLSession?
+    public var subscribeQueue: DispatchQueue
+    public var urlSession: URLSession?
 
-    public init() {}
+    public init(subscribeQueue: DispatchQueue = DispatchQueue(label: "com.Teknasyon.queue", qos: .background),
+                _ urlSession: URLSession = URLSession(configuration: .default, delegate: URLSessionPinningDelegate(), delegateQueue: nil)) {
+        self.subscribeQueue = subscribeQueue
+        self.urlSession = urlSession
+    }
 
     public func initializeSessionManagers() {
         urlSession?.invalidateAndCancel()
