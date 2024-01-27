@@ -53,30 +53,6 @@ open class CollectionViewModel<CellType: UICollectionViewCell & Providable, Head
 
         update()
     }
-
-    public func update(_ sections: [Section<HeaderItem, [Item]>]) {
-        self.sections.value.removeAll()
-
-        sections.forEach { section in
-            self.sections.value.append(section)
-        }
-
-        update()
-    }
-
-    public func replace(_ replacedItem: Item) {
-        for (sectionIndex, section) in sections.value.enumerated() {
-            for (itemIndex, item) in section.items.enumerated() {
-                if replacedItem == item {
-                    sections.value[sectionIndex].items[itemIndex] = replacedItem
-
-                    break
-                }
-            }
-        }
-
-        update()
-    }
 }
 
 extension CollectionViewModel {
@@ -101,17 +77,16 @@ extension CollectionViewModel {
             collectionView: UICollectionView,
             kind: String,
             indexPath: IndexPath) -> UICollectionReusableView? in
-
+            
             if let header: HeaderType = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                                        withReuseIdentifier: headerIdentifier.toStringValueOrEmpty,
-                                                                                        for: indexPath) as? HeaderType,
+                                                                                        withReuseIdentifier: headerIdentifier.toStringValueOrEmpty, for: indexPath) as? HeaderType,
                let item = sections.value[indexPath.section].headerItem,
                let headerItem: HeaderType.ProvidedItem = item {
                 header.provide(headerItem)
-
+                
                 return header
             }
-
+            
             return UICollectionReusableView()
         }
 
