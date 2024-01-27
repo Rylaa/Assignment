@@ -7,20 +7,20 @@
 
 import Foundation
 
-class SimuleURLSession: URLProtocol {
-    static var stubResponseData: Data?
-    static var stubURLResponse: HTTPURLResponse?
-    static var stubError: Error?
+public class SimuleURLSession: URLProtocol {
+    public static var stubResponseData: Data?
+    public static var stubURLResponse: HTTPURLResponse?
+    public static var stubError: Error?
 
-    override class func canInit(with request: URLRequest) -> Bool {
+    public override class func canInit(with request: URLRequest) -> Bool {
         return true
     }
 
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
 
-    override func startLoading() {
+    public override func startLoading() {
         if let stubError = Self.stubError {
             client?.urlProtocol(self, didFailWithError: stubError)
         } else {
@@ -29,5 +29,5 @@ class SimuleURLSession: URLProtocol {
         client?.urlProtocolDidFinishLoading(self)
     }
 
-    override func stopLoading() {}
+    public override func stopLoading() {}
 }

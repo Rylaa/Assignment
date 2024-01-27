@@ -28,8 +28,6 @@ final class MoviesDetailViewController: UIViewController {
     }
 }
 
-// MARK: Presenter contracts
-
 extension MoviesDetailViewController: MoviesDetailViewProtocol {
     func initialize() {
         presenter.initialize()
