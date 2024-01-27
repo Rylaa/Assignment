@@ -27,7 +27,6 @@ struct PopularMoviesDetailModel: Codable, Hashable {
     let gender: Int?
     let originalName: String?
     let id: Int?
-    let adult: Bool?
     let knownForDepartment: String?
     let popularity: Double?
     let profilePath: String?
@@ -38,7 +37,6 @@ struct PopularMoviesDetailModel: Codable, Hashable {
         case gender
         case originalName = "original_name"
         case id
-        case adult
         case knownForDepartment = "known_for_department"
         case popularity
         case profilePath = "profile_path"
@@ -48,8 +46,8 @@ struct PopularMoviesDetailModel: Codable, Hashable {
 }
 
 struct MovieModel: Codable, Hashable {
+    let uuid: String? = UUID().uuidString
     let id: Int?
-    let adult: Bool?
     let backdropPath: String?
     let originalTitle: String?
     let mediaType: String?
@@ -62,7 +60,6 @@ struct MovieModel: Codable, Hashable {
     let originalLanguage: String?
     let voteCount: Int?
     let releaseDate: String?
-    let video: Bool?
     let originCountry: [String]?
     let firstAirDate: String?
     let originalName: String?
@@ -70,7 +67,6 @@ struct MovieModel: Codable, Hashable {
 
     enum CodingKeys: String, CodingKey {
         case id
-        case adult
         case backdropPath = "backdrop_path"
         case originalTitle = "original_title"
         case mediaType = "media_type"
@@ -83,10 +79,13 @@ struct MovieModel: Codable, Hashable {
         case originalLanguage = "original_language"
         case voteCount = "vote_count"
         case releaseDate = "release_date"
-        case video
         case originCountry = "origin_country"
         case firstAirDate = "first_air_date"
         case originalName = "original_name"
         case name
+    }
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.uuid == rhs.uuid
     }
 }

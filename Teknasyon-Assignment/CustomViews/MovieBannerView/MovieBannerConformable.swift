@@ -26,7 +26,7 @@ extension MovieModel: MovieBannerConformableProtocol {
     }
 
     var movieName: String {
-        name.toStringValueOrEmpty
+        originalTitle.toStringValueOrEmpty
     }
 
     var bannerUrl: String {

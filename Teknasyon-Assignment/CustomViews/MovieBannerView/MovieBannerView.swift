@@ -18,6 +18,7 @@ final class MovieBannerView: UIView {
 
     enum Constants {
         static let bottomStackViewHeight: CGFloat = 56
+        static let size8: CGFloat = 8
     }
 
     required init() {
@@ -35,7 +36,7 @@ final class MovieBannerView: UIView {
 
         bannerImageView.load(imageUrl: model.bannerUrl)
         moviewNameLabel.text = model.movieName
-        voteDetailLabel.text = "\(model.vote) / \(model.averageOfVote)"
+        voteDetailLabel.text = "IMDB \(model.averageOfVote)"
     }
 }
 
@@ -43,6 +44,8 @@ private extension MovieBannerView {
     func setupViews() {
         addContentStackView()
         addBannerImageView()
+        addBottomStackView()
+        addMovieNameLabel()
         addVoteDetailLabel()
     }
 
@@ -65,7 +68,8 @@ private extension MovieBannerView {
     func addBottomStackView() {
         bottomStackView.axis = .horizontal
         bottomStackView.distribution = .fillEqually
-
+        bottomStackView.spacing = Constants.size8
+        
         contentStackView.addArrangedSubview(bottomStackView)
         bottomStackView.snp.makeConstraints { make in
             make.height.equalTo(Constants.bottomStackViewHeight)
@@ -75,7 +79,7 @@ private extension MovieBannerView {
     func addMovieNameLabel() {
         moviewNameLabel.textColor = .white
         moviewNameLabel.font = .systemFont(ofSize: 16, weight: .medium)
-
+        moviewNameLabel.numberOfLines = 2
         bottomStackView.addArrangedSubview(moviewNameLabel)
     }
 
