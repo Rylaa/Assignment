@@ -21,6 +21,16 @@ struct PopularMoviesResponseModel: Codable, Hashable {
         case totalResults = "total_results"
         case page
     }
+
+    init(results: [PopularMoviesDetailModel]? = nil,
+         totalPages: Int? = nil,
+         totalResults: Int? = nil,
+         page: Int? = nil) {
+        self.results = results
+        self.totalPages = totalPages
+        self.totalResults = totalResults
+        self.page = page
+    }
 }
 
 struct PopularMoviesDetailModel: Codable, Hashable {
@@ -42,6 +52,24 @@ struct PopularMoviesDetailModel: Codable, Hashable {
         case profilePath = "profile_path"
         case name
         case movies = "known_for"
+    }
+
+    init(gender: Int? = nil,
+         originalName: String? = nil,
+         id: Int? = nil,
+         knownForDepartment: String? = nil,
+         popularity: Double? = nil,
+         profilePath: String? = nil,
+         name: String? = nil,
+         movies: [MovieModel]? = nil) {
+        self.gender = gender
+        self.originalName = originalName
+        self.id = id
+        self.knownForDepartment = knownForDepartment
+        self.popularity = popularity
+        self.profilePath = profilePath
+        self.name = name
+        self.movies = movies
     }
 }
 
@@ -87,5 +115,41 @@ struct MovieModel: Codable, Hashable {
 
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.uuid == rhs.uuid
+    }
+
+    init(id: Int? = nil,
+         backdropPath: String? = nil,
+         originalTitle: String? = nil,
+         mediaType: String? = nil,
+         genreIds: [Int]? = nil,
+         voteAverage: Double? = nil,
+         popularity: Double? = nil,
+         posterPath: String? = nil,
+         title: String? = nil,
+         overview: String? = nil,
+         originalLanguage: String? = nil,
+         voteCount: Int? = nil,
+         releaseDate: String? = nil,
+         originCountry: [String]? = nil,
+         firstAirDate: String? = nil,
+         originalName: String? = nil,
+         name: String? = nil) {
+        self.id = id
+        self.backdropPath = backdropPath
+        self.originalTitle = originalTitle
+        self.mediaType = mediaType
+        self.genreIds = genreIds
+        self.voteAverage = voteAverage
+        self.popularity = popularity
+        self.posterPath = posterPath
+        self.title = title
+        self.overview = overview
+        self.originalLanguage = originalLanguage
+        self.voteCount = voteCount
+        self.releaseDate = releaseDate
+        self.originCountry = originCountry
+        self.firstAirDate = firstAirDate
+        self.originalName = originalName
+        self.name = name
     }
 }
