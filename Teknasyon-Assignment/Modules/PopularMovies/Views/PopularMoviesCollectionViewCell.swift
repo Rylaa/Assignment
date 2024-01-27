@@ -10,7 +10,7 @@ import SnapKit
 import UIKit
 
 final class PopularMoviesCollectionViewCell: UICollectionViewCell, Providable {
-    typealias ProvidedItem = PopularMoviesDetailModel
+    typealias ProvidedItem = MovieModel
 
     private let bannerView = MovieBannerView()
     private var cellModel: ProvidedItem?
@@ -25,7 +25,7 @@ final class PopularMoviesCollectionViewCell: UICollectionViewCell, Providable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func provide(_ item: PopularMoviesDetailModel) {
+    func provide(_ item: MovieModel) {
         cellModel = item
         bannerView.provideModel(item)
     }

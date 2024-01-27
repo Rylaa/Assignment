@@ -8,7 +8,7 @@ import Combine
 import Network
 
 protocol PopularMoviesWorkerProtocol: AnyObject {
-    func fetchPopularMovies() -> AnyPublisher<PopularMoviesResponseModel, RequestError>
+    func fetchPopularMoviesWithPage(_ page: Int) -> AnyPublisher<PopularMoviesResponseModel, RequestError>
 }
 
 final class PopularMoviesWorker: PopularMoviesWorkerProtocol {
@@ -18,13 +18,14 @@ final class PopularMoviesWorker: PopularMoviesWorkerProtocol {
         self.service = service
     }
 
-    func fetchPopularMovies() -> AnyPublisher<PopularMoviesResponseModel, RequestError> {
-        service.request(getRequest(), response: PopularMoviesResponseModel.self).eraseToAnyPublisher()
+    func fetchPopularMoviesWithPage(_ page: Int) -> AnyPublisher<PopularMoviesResponseModel, RequestError> {
+        service.request(getRequest(page), response: PopularMoviesResponseModel.self).eraseToAnyPublisher()
     }
 
-    func getRequest() -> Request {
+    func getRequest(_ page: Int) -> Request {
         RequestBuilder(.popular)
             .method(.get)
+            .parameters(["page": page])
             .build()
     }
 }

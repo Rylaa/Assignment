@@ -5,15 +5,16 @@
 //  Created by Yusuf Demirkoparan on 26.01.2024.
 //
 
+import Core
 import Foundation
 import Network
-import Core
 
 protocol PopularMoviesPresenterProtocol: AnyObject {
     var view: PopularMoviesViewProtocol? { get }
-  
+
     func initialize()
     func collectionViewDataSource(_ dataSource: PopularMoviesCollectionViewDatasource)
+    func addCollectionViewSections(_ sections: [Section<PopularMoviesCollectionHeaderModel?, [MovieModel]>])
 }
 
 final class PopularMoviesPresenter {
@@ -27,6 +28,7 @@ final class PopularMoviesPresenter {
         self.router = router
     }
 }
+
 /// Contracts with interactor only
 extension PopularMoviesPresenter: PopularMoviesPresenterProtocol {
     func initialize() {
@@ -38,8 +40,9 @@ extension PopularMoviesPresenter: PopularMoviesPresenterProtocol {
         collectionViewDataSource?.delegate = self
     }
     
-    func addItems(_ items: [PopularMoviesDetailModel]) {
-        collectionViewDataSource?.update([Section(items: items)])
+    func addCollectionViewSections(_ sections: [Section<PopularMoviesCollectionHeaderModel?, [MovieModel]>]) {
+        var sectionItems: [Section<PopularMoviesCollectionHeaderModel?, [MovieModel]>] = sections
+        collectionViewDataSource?.add(sectionItems)
     }
 }
 
