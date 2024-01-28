@@ -1,4 +1,4 @@
-# Network Module README
+# Network Module 
 
 ## Overview
 This Network module is a crucial component of a project that leverages the VIPER architecture to display popular movies fetched from an API. It handles all network-related operations, including API calls and data handling, using Swift, Combine, and additional custom utilities.
@@ -77,3 +77,75 @@ This Network module is seamlessly integrated into the VIPER architecture, allowi
 This module includes robust error handling and logging mechanisms to ensure reliable network operations. SSL pinning is implemented for enhanced security, particularly important in handling sensitive data like movie details and images.
 
 **Note**: This README provides a comprehensive overview of the Network module. For detailed information on other modules like Core, UI, or the complete VIPER architecture, refer to their respective documentation.
+
+
+
+# Core Module 
+
+## Overview
+The Core module provides foundational components and utilities that are essential for the functioning of the application. This module includes custom classes, extensions, and utilities that are used across different parts of the project.
+
+## Key Components
+
+### Spinner
+- **Description**: A utility class for displaying and managing a loading spinner.
+- **Features**:
+  - `start` and `stop` methods to control the spinner.
+  - Customizable back and base colors.
+
+### Logger
+- **Purpose**: Facilitates logging throughout the application.
+- **Features**:
+  - Custom log levels (debug, error, info, warning).
+  - Method for logging messages with file, line number, and function details.
+
+### CancelBag
+- **Description**: Manages cancellable objects, specifically for Combine subscriptions.
+- **Methods**:
+  - `cancel` to clear all subscriptions.
+  - `collect` to gather and manage new subscriptions.
+
+### CollectionViewModel
+- **Functionality**: A generic view model for managing collections in a UICollectionView.
+- **Key Components**:
+  - Generic types for cell and header view models.
+  - Methods for adding and removing sections.
+  - Diffable data source setup.
+
+### Providable Protocol
+- **Purpose**: Defines a protocol for items that can be provided to views.
+- **Requirements**:
+  - Must define a `ProvidedItem` type.
+  - `provide` method for supplying the item to the view.
+
+### Extensions
+- **Description**: Various extensions to standard Swift and UIKit types for added functionality and convenience.
+- **Included Extensions**:
+  - `Data` for SHA256 hashing and pretty printing JSON.
+  - `Optional` for safe unwrapping and default values.
+  - `UICollectionReusableView` for a reusable identifier.
+  - `UICollectionViewLayout` for creating custom flow layouts.
+  - `UIImageView` for loading images with SDWebImage.
+  - `UIScreen` and `UIWindow` for device screen and window utilities.
+
+## Usage and Implementation
+- **Spinner**: Used for showing a loading state across the app.
+- **Logger**: Utilized for debugging and logging important information.
+- **CancelBag**: Essential for managing Combine subscriptions in a memory-efficient manner.
+- **CollectionViewModel**: Serves as the backbone for collection views, managing their data and presentation.
+- **Providable Protocol**: Used by views that require dynamic content provision.
+- **Extensions**: Enhance functionality of standard types and simplify common tasks.
+
+## Integration with Other Modules
+The Core module is designed to be independent yet integral to other modules of the project, providing them with essential utilities and components.
+
+## Dependencies
+- **SnapKit**: For layout constraints.
+- **UIKit**: Fundamental for UI components and interactions.
+- **Combine**: Utilized in some components for reactive programming.
+- **SDWebImage**: For efficient image loading and caching.
+
+## Additional Notes
+The Core module is critical for maintaining a clean, efficient, and scalable codebase. It centralizes common functionalities and ensures consistency across the application.
+
+**Note**: This README provides an overview of the Core module. For detailed documentation on specific components or integration with other modules, refer to the respective sections or module documentation.
