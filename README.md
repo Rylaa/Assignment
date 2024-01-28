@@ -80,6 +80,76 @@ This screen is designed with scalability and maintainability in mind, ensuring t
 
 **Note**: This README provides an overview of the Popular Movies Screen. For detailed documentation on specific components or integration with other modules, refer to the respective sections or module documentation.
 
+# Popular Movies Unit and Integration Testing
+
+## Overview
+This document outlines the unit and integration testing strategy for the Popular Movies screen, ensuring robustness and reliability in the application's functionality. The tests are designed to cover various components of the VIPER architecture, focusing on the Popular Movies feature, with an emphasis on manipulating the network layer for integration tests.
+
+## Unit Testing
+
+### PopularMoviesInteractorTests
+- **Purpose**: Tests the `PopularMoviesInteractor` functionality.
+- **Tests**:
+  - `testFetchPopularMovies_Success`: Ensures successful fetching of popular movies.
+
+### MockPopularMoviesWorker
+- **Description**: Mocks the `PopularMoviesWorkerProtocol` for testing the interactor.
+- **Functionality**: Returns predefined results for network requests.
+
+### MockPopularMoviesPresenter
+- **Purpose**: Mocks the `PopularMoviesPresenterProtocol` to test presenter interactions.
+- **Features**:
+  - Tracks if specific methods like `addCollectionViewSections` are called.
+
+### MockData
+- **Usage**: Provides mock data for testing, such as a fake response model.
+
+### PopularMoviesPresenterTests
+- **Objective**: Tests the `PopularMoviesPresenter` functionalities.
+- **Key Tests**:
+  - `testInitializeTriggersFetchPopularMovies`: Checks if `fetchPopularMovies` is called upon initialization.
+  - `testAddCollectionViewSections`: Validates the addition of collection view sections.
+
+### MockPopularMoviesView
+- **Functionality**: Mocks the `PopularMoviesViewProtocol`.
+- **Features**: Tracks calls to methods like `initialize` and `addCollectionViewSections`.
+
+### MockPopularMoviesInteractor
+- **Purpose**: Mocks the `PopularMoviesInteractorProtocol`.
+- **Features**: Tracks if `fetchPopularMovies` is called.
+
+### MockPopularMoviesRouter
+- **Usage**: Mocks the `PopularMoviesRouterProtocol` for testing navigation logic.
+
+## Integration Testing
+
+### DashboardWorkerTests
+- **Objective**: Tests the `PopularMoviesWorker` with a mock network service.
+- **Key Tests**:
+  - `testFetchCards_Success`: Ensures successful fetching and parsing of movie data.
+  - `testFetchCards_Error`: Tests error handling capabilities.
+
+### MockNetworkClientService
+- **Description**: Mocks the `NetworkClientService` for integration tests.
+- **Functionality**: Returns predefined responses or errors for network requests.
+
+### PopularMoviesIntegration_Tests
+- **Purpose**: Performs integration tests on the network layer.
+- **Tests**:
+  - `test_HappyPath_Response`: Validates the successful fetching of popular movies data from the mocked network layer.
+  - `test_Error_Response`: Ensures error handling in case of network failures.
+
+## Testing Strategy
+- **Unit Testing**: Focuses on individual components and their isolated functionality.
+- **Integration Testing**: Tests the interaction between components, particularly the network layer.
+- **Mocking**: Uses mock objects and data to simulate real-world scenarios and responses.
+- **Assertions**: Ensures the application behaves as expected under various conditions.
+
+## Additional Notes
+These tests are crucial for maintaining the quality and reliability of the Popular Movies feature. They help identify issues early in the development cycle, ensuring a robust and error-free application.
+
+**Note**: This README provides an overview of the testing strategies for the Popular Movies feature. For detailed information on specific test cases or methodologies, refer to the respective test class documentation.
+
 
 # Network Module 
 
