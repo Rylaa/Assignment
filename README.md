@@ -1,3 +1,86 @@
+# Popular Movies Screen
+
+## Overview
+The Popular Movies Screen is a key feature of the application, showcasing popular movies fetched from an API. This screen is designed to reduce code duplication by reusing the `MovieBannerView` in both the detail and popular movie screens. The implementation is tailored to facilitate easy testing and maintainability.
+
+## Key Components
+
+### PopularMoviesViewProtocol
+- **Description**: Protocol for the Popular Movies view to initialize the setup.
+
+### PopularMoviesViewController
+- **Functionality**: Manages the UI and interactions of the Popular Movies screen.
+- **Features**:
+  - A UICollectionView to display movie items.
+  - Integration with presenter for handling user interactions and view updates.
+
+### PopularMoviesInteractorProtocol & PopularMoviesInteractor
+- **Purpose**: Handles business logic of fetching popular movies.
+- **Features**:
+  - Communicates with worker to fetch data.
+  - Processes and provides data to the presenter.
+
+### PopularMoviesRouter & Protocol
+- **Functionality**: Manages navigation and screen transitions.
+- **Methods**:
+  - `showDetail`: Navigates to the movie detail screen.
+
+### PopularMoviesPresenter & Protocol
+- **Purpose**: Acts as a mediator between the View, Interactor, and Router.
+- **Responsibilities**:
+  - Initializing data fetch process.
+  - Handling data provided by the interactor and updating the view.
+
+### PopularMoviesWorker & Protocol
+- **Functionality**: Performs network requests to fetch popular movies.
+- **Methods**:
+  - `fetchPopularMoviesWithPage`: Fetches movies based on the provided page number.
+
+### PopularMoviesCollectionViewDatasource
+- **Description**: Manages the data source and delegates of the collection view.
+- **Features**:
+  - Custom delegate methods for item selection and pagination.
+
+### PopularMoviesCollectionViewCell
+- **Purpose**: UICollectionViewCell for displaying individual movie items.
+- **Features**:
+  - Reusable `MovieBannerView` for displaying movie details.
+
+### MovieBannerView
+- **Functionality**: A reusable view for displaying movie banners.
+- **Features**:
+  - Customizable for different screen types (detail and popular).
+  - Displays movie images and details.
+
+### Extensions and Conformances
+- **Description**: Extensions and protocol conformances to integrate models with the `MovieBannerView`.
+- **Key Extensions**:
+  - `MovieModel` conforming to `MovieBannerConformableProtocol`.
+
+## Usage and Implementation
+- Modular design for easy testing and reduced code duplication.
+- Reusable components like `MovieBannerView` are utilized in multiple screens.
+- Clear separation of concerns following the VIPER architecture.
+- Extensive use of protocols for loose coupling and easy mockability in tests.
+
+## Integration with VIPER Architecture
+- View: `PopularMoviesViewController` and `PopularMoviesCollectionViewCell`.
+- Interactor: `PopularMoviesInteractor`.
+- Presenter: `PopularMoviesPresenter`.
+- Entity: Models and response objects.
+- Router: `PopularMoviesRouter`.
+
+## Testing Strategy
+- Protocols and dependency injection allow for easy mocking of components.
+- Modular design enables isolated testing of individual components.
+- Reusable views like `MovieBannerView` reduce the need for duplicated test cases.
+
+## Additional Notes
+This screen is designed with scalability and maintainability in mind, ensuring that the codebase remains clean and efficient as the project grows.
+
+**Note**: This README provides an overview of the Popular Movies Screen. For detailed documentation on specific components or integration with other modules, refer to the respective sections or module documentation.
+
+
 # Network Module 
 
 ## Overview
