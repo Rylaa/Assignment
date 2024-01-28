@@ -11,7 +11,7 @@ class ResourceLoader {
     static func loadFile() throws -> Data {
         let bundle = Bundle.test
 
-        if let url = try? bundle.url(forResource: "PopularMoviesMock", withExtension: "json").unwrap() {
+        if let url = bundle.url(forResource: "PopularMoviesMock", withExtension: "json").unwrap() {
             let data = try Data(contentsOf: url)
 
             return data
@@ -23,5 +23,6 @@ class ResourceLoader {
 
 private extension Bundle {
     class Dummy { }
+    
     static let test = Bundle(for: Dummy.self)
 }

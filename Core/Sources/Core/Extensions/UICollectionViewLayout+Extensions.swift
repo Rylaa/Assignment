@@ -11,7 +11,7 @@ public extension UICollectionViewLayout {
     static func createFlowLayout(itemSize: CGSize = .zero,
                                  minimumLineSpacing: CGFloat = 0,
                                  minimumInteritemSpacing: CGFloat = 0,
-                                 sectionInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                                 sectionInset: UIEdgeInsets = .zero,
                                  scrollDirection: UICollectionView.ScrollDirection = .vertical) -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = itemSize

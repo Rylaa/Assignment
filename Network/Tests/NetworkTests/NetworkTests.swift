@@ -1,6 +1,6 @@
 import XCTest
 @testable import Network
-
+// swiftlint:disable all
 final class NetworkTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation

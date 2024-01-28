@@ -4,7 +4,7 @@
 //
 //  Created by Yusuf Demirkoparan on 26.01.2024.
 //
-
+// swiftlint:disable all
 import Foundation
 
 struct PopularMoviesResponseModel: Codable, Hashable {
