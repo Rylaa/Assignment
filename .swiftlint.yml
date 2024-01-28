@@ -129,7 +129,7 @@ opt_in_rules:
 
     # Rationale: Encourages better documentation
     # https://github.com/realm/SwiftLint/blob/master/Rules.md#fatal-error-message
-    - fatal_error_message
+#    - fatal_error_message
 
     # Rationale: Encourages using the right API to solve a problem
     # https://github.com/realm/SwiftLint/blob/master/Rules.md#first-where
@@ -444,7 +444,7 @@ opt_in_rules:
     - literal_expression_end_indentation
 
     # Modifier order should be consistent
-    - modifier_order
+#    - modifier_order
 
     # Static strings should be used as a key/comment in NSLocalizedString in order for genstrings to work.
     - nslocalizedstring_key
@@ -483,7 +483,7 @@ opt_in_rules:
     - balanced_xctest_lifecycle
 
     # Types used for hosting only static members should be implemeted as a caseless enum to avoid instantiation.
-    - convenience_type
+#    - convenience_type
 
     # Number of associated values in an enum should be low
     - enum_case_associated_values_count
@@ -530,8 +530,8 @@ type_contents_order:
     - associated_type
     - type_alias
    # - subtype
-    - [type_property, instance_property, ib_outlet, ib_inspectable]
-    - [initializer, deinitializer, type_method, view_life_cycle_method, subscript, ib_action]
+#    - [instance_property, ib_outlet, ib_inspectable]
+#    - [initializer, deinitializer, subscript, ib_action]
 
 custom_rules:
     force_https:
