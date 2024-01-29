@@ -20,7 +20,7 @@ public final class NetworkClient: NetworkClientService {
     public var subscribeQueue: DispatchQueue
     public var urlSession: URLSession?
 
-    public init(subscribeQueue: DispatchQueue = DispatchQueue(label: "com.Teknasyon.queue", qos: .background),
+    public init(subscribeQueue: DispatchQueue = DispatchQueue(label: "com.Assignment.queue", qos: .background),
                 _ urlSession: URLSession = URLSession(configuration: .default, delegate: URLSessionPinningDelegate(), delegateQueue: nil)) {
         self.subscribeQueue = subscribeQueue
         self.urlSession = urlSession
