@@ -7,7 +7,7 @@
 
 import Foundation
 // swiftlint:disable all
-public let Log = Logger(service: "Teknasyon-Assignment")
+public let Log = Logger(service: "-Assignment")
 
 public final class Logger {
     /// Status Types to declare success and failure scenarios.
